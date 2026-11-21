@@ -1,6 +1,7 @@
 import '@fontsource-variable/inter';
 import '@fontsource-variable/space-grotesk';
 import '@fontsource-variable/jetbrains-mono';
+import '@fontsource/courier-prime/400.css';
 import './style.css';
 import {
   applyLang,

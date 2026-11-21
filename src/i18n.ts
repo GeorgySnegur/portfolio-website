@@ -13,7 +13,7 @@ export const strings: Record<Lang, Dict> = {
   en: {
     'meta.title': 'Georgy Snegur - Web Developer',
     'meta.description':
-      'Georgy Snegur, web developer and student at FH Salzburg. I build websites that work and automate the rest.',
+      'Georgy Snegur, web developer and student at FH Salzburg. I make it work. Then I make it work on its own.',
     'nav.skip': 'Skip to content',
     'nav.home': 'GS - Georgy Snegur, back to top',
     'nav.menu': 'Menu',
@@ -24,7 +24,7 @@ export const strings: Record<Lang, Dict> = {
     'nav.langGroup': 'Language',
     'hero.label': '01 / INTRO',
     'hero.role': 'Web Developer',
-    'hero.tagline': 'I build things that work - and automate the rest.',
+    'hero.tagline': 'I make it work. Then I make it work on its own.',
     'about.label': 'About',
     'about.text':
       'Student at FH Salzburg, studying Code and Interactive Systems. Background in 3D and animation - now focused on web development, automation, and DevOps. Looking for a mandatory internship (Pflichtpraktikum) starting July 2027.',
@@ -50,7 +50,7 @@ export const strings: Record<Lang, Dict> = {
   de: {
     'meta.title': 'Georgy Snegur - Webentwickler',
     'meta.description':
-      'Georgy Snegur, Webentwickler und Student an der FH Salzburg. Ich baue Websites, die funktionieren, und automatisiere den Rest.',
+      "Georgy Snegur, Webentwickler und Student an der FH Salzburg. Ich bring's zum Laufen. Dann bring ich's dazu, von allein zu laufen.",
     'nav.skip': 'Zum Inhalt springen',
     'nav.home': 'GS - Georgy Snegur, nach oben',
     'nav.menu': 'Menü',
@@ -62,7 +62,7 @@ export const strings: Record<Lang, Dict> = {
     'hero.label': '01 / INTRO',
     'hero.role': 'Webentwickler',
     'hero.tagline':
-      'Ich baue Dinge, die funktionieren - und automatisiere den Rest.',
+      "Ich bring's zum Laufen. Dann bring ich's dazu, von allein zu laufen.",
     'about.label': 'Über mich',
     'about.text':
       'Student an der FH Salzburg im Studiengang Code and Interactive Systems. Hintergrund in 3D und Animation - jetzt mit Fokus auf Webentwicklung, Automatisierung und DevOps. Ich suche ein Pflichtpraktikum ab Juli 2027.',
