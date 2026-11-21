@@ -15,7 +15,7 @@ export const strings: Record<Lang, Dict> = {
     'meta.description':
       'Georgy Snegur, web developer and student at FH Salzburg. I build websites that work and automate the rest.',
     'nav.skip': 'Skip to content',
-    'nav.home': 'Georgy Snegur, back to top',
+    'nav.home': 'GS - Georgy Snegur, back to top',
     'nav.menu': 'Menu',
     'nav.about': 'About',
     'nav.projects': 'Projects',
@@ -51,7 +51,7 @@ export const strings: Record<Lang, Dict> = {
     'meta.description':
       'Georgy Snegur, Webentwickler und Student an der FH Salzburg. Ich baue Websites, die funktionieren, und automatisiere den Rest.',
     'nav.skip': 'Zum Inhalt springen',
-    'nav.home': 'Georgy Snegur, nach oben',
+    'nav.home': 'GS - Georgy Snegur, nach oben',
     'nav.menu': 'Menü',
     'nav.about': 'Über mich',
     'nav.projects': 'Projekte',
