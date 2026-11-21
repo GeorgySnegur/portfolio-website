@@ -24,10 +24,9 @@ export const strings: Record<Lang, Dict> = {
     'nav.langGroup': 'Language',
     'hero.label': '01 / INTRO',
     'hero.role': 'Web Developer',
-    'hero.tagline': 'I make it work. Then I make it work on its own.',
     'about.label': 'About',
     'about.text':
-      'Student at FH Salzburg, studying Code and Interactive Systems. Background in 3D and animation - now focused on web development, automation, and DevOps. Looking for a mandatory internship (Pflichtpraktikum) starting July 2027.',
+      'Student at FH Salzburg, studying Code and Interactive Systems. Background in 3D and animation - now focused on web development, automation, and WebOps. Looking for a mandatory internship (Pflichtpraktikum) starting July 2027.',
     'projects.label': 'Work',
     'projects.gina.text':
       'Artist website. Migrated the site from Joomla to a custom PHP codebase and built a self-contained, bilingual (DE/EN) content management system, so the non-technical client can edit every page without touching code.',
@@ -39,7 +38,7 @@ export const strings: Record<Lang, Dict> = {
       'AI-powered storyboard generator. Upload a script, get visual panels.',
     'projects.tag.ai': 'AI',
     'skills.label': 'Skills',
-    'skills.devops': 'DevOps & Automation',
+    'skills.webops': 'WebOps & Automation',
     'contact.label': 'Contact',
     'contact.title': 'Get in touch',
     'contact.text': 'Open to opportunities starting July 2027.',
@@ -50,7 +49,7 @@ export const strings: Record<Lang, Dict> = {
   de: {
     'meta.title': 'Georgy Snegur - Webentwickler',
     'meta.description':
-      "Georgy Snegur, Webentwickler und Student an der FH Salzburg. Ich bring's zum Laufen. Dann bring ich's dazu, von allein zu laufen.",
+      'Georgy Snegur, Webentwickler und Student an der FH Salzburg. I make it work. Then I make it work on its own.',
     'nav.skip': 'Zum Inhalt springen',
     'nav.home': 'GS - Georgy Snegur, nach oben',
     'nav.menu': 'Menü',
@@ -61,11 +60,9 @@ export const strings: Record<Lang, Dict> = {
     'nav.langGroup': 'Sprache',
     'hero.label': '01 / INTRO',
     'hero.role': 'Webentwickler',
-    'hero.tagline':
-      "Ich bring's zum Laufen. Dann bring ich's dazu, von allein zu laufen.",
     'about.label': 'Über mich',
     'about.text':
-      'Student an der FH Salzburg im Studiengang Code and Interactive Systems. Hintergrund in 3D und Animation - jetzt mit Fokus auf Webentwicklung, Automatisierung und DevOps. Ich suche ein Pflichtpraktikum ab Juli 2027.',
+      'Student an der FH Salzburg im Studiengang Code and Interactive Systems. Hintergrund in 3D und Animation - jetzt mit Fokus auf Webentwicklung, Automatisierung und WebOps. Ich suche ein Pflichtpraktikum ab Juli 2027.',
     'projects.label': 'Projekte',
     'projects.gina.text':
       'Website einer Künstlerin. Die Seite von Joomla auf eine eigene PHP-Codebasis migriert und ein eigenständiges, zweisprachiges (DE/EN) Content-Management-System gebaut, damit jede Seite ohne Programmierkenntnisse bearbeitet werden kann.',
@@ -77,7 +74,7 @@ export const strings: Record<Lang, Dict> = {
       'KI-gestützter Storyboard-Generator. Drehbuch hochladen, Bild-Panels erhalten.',
     'projects.tag.ai': 'KI',
     'skills.label': 'Skills',
-    'skills.devops': 'DevOps & Automatisierung',
+    'skills.webops': 'WebOps & Automatisierung',
     'contact.label': 'Kontakt',
     'contact.title': 'Kontakt aufnehmen',
     'contact.text': 'Offen für Möglichkeiten ab Juli 2027.',
