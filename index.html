@@ -20,7 +20,24 @@
       content="#fafafa"
       media="(prefers-color-scheme: light)"
     />
+    <link rel="canonical" href="https://georgysnegur.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://georgysnegur.com/" />
+    <meta property="og:site_name" content="Georgy Snegur" />
+    <meta property="og:title" content="Georgy Snegur - Web Developer" />
+    <meta
+      property="og:description"
+      content="Web developer and student at FH Salzburg. I build things that work - and automate the rest."
+    />
+    <meta property="og:image" content="https://georgysnegur.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Georgy Snegur, Web Developer" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="de_AT" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
@@ -246,7 +263,107 @@
           </div>
         </div>
       </section>
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact">
+          <p class="section-label">
+            <span aria-hidden="true">05 / </span
+            ><span data-i18n="contact.label">Contact</span>
+          </p>
+          <h2
+            class="contact-title"
+            id="contact-title"
+            data-i18n="contact.title"
+          >
+            Get in touch
+          </h2>
+          <p class="contact-text" data-i18n="contact.text">
+            Open to opportunities starting July 2027.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <!-- PLACEHOLDER: real email address -->
+              <a href="mailto:hello@georgysnegur.com">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="3"
+                    y="5"
+                    width="18"
+                    height="14"
+                    rx="1"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="m3.5 6 8.5 7 8.5-7"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+                <span data-i18n="contact.email">Email</span>
+              </a>
+            </li>
+            <li>
+              <!-- PLACEHOLDER: real LinkedIn profile URL -->
+              <a href="https://www.linkedin.com/in/georgysnegur">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"
+                  />
+                </svg>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/GeorgySnegur">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"
+                  />
+                </svg>
+                GitHub
+              </a>
+            </li>
+          </ul>
+
+          <!-- PLACEHOLDER: replace public/cv/georgy-snegur-cv.pdf with the real CV -->
+          <a
+            class="button-cv"
+            href="/cv/georgy-snegur-cv.pdf"
+            download
+            data-i18n="contact.cv"
+          >
+            Download CV
+          </a>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>2026</span>
+        <span>Georgy Snegur</span>
+      </div>
+    </footer>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
