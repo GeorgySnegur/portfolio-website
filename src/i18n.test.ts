@@ -75,3 +75,24 @@ describe('CV files', () => {
     }
   });
 });
+
+describe('privacy: nothing loaded from third parties', () => {
+  const css = readFileSync(resolve(import.meta.dirname, 'style.css'), 'utf8');
+
+  it('no Google Fonts or other font CDNs', () => {
+    for (const text of [html, css]) {
+      expect(text).not.toMatch(
+        /fonts\.(googleapis|gstatic)\.com|use\.typekit|fonts\.bunny/,
+      );
+    }
+  });
+
+  it('no external scripts, stylesheets or CSS urls', () => {
+    expect(html).not.toMatch(/<script[^>]+src="(https?:)?\/\//);
+    expect(html).not.toMatch(
+      /<link[^>]+rel="stylesheet"[^>]+href="(https?:)?\/\//,
+    );
+    expect(css).not.toMatch(/url\(\s*['"]?(https?:)?\/\//);
+    expect(css).not.toMatch(/@import/);
+  });
+});
