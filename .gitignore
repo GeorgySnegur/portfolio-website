@@ -33,3 +33,9 @@ killme/
 skills-lock.json
 CLAUDE.md
 notes/
+
+# never commit keys or certs
+origin-cert.txt
+*.pem
+*.key
+.env

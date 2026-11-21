@@ -1,60 +1,50 @@
+import '@fontsource-variable/inter';
+import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/jetbrains-mono';
 import './style.css';
-import heroImg from './assets/hero.png';
-import typescriptLogo from './assets/typescript.svg';
-import viteLogo from './assets/vite.svg';
-import { setupCounter } from './counter.ts';
+import {
+  applyLang,
+  detectLang,
+  readSavedLang,
+  saveLang,
+  type Lang,
+} from './i18n';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+// Language: pick on load, switch on click.
+applyLang(document, detectLang(navigator.languages ?? [], readSavedLang()));
 
-<div class="ticks"></div>
+document.querySelectorAll<HTMLButtonElement>('[data-lang]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang as Lang;
+    saveLang(lang);
+    applyLang(document, lang);
+  });
+});
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+// Mobile menu: the button opens and closes the link list.
+const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+const menu = document.getElementById('nav-menu');
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`;
+function setMenu(open: boolean): void {
+  toggle?.setAttribute('aria-expanded', String(open));
+  menu?.classList.toggle('is-open', open);
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
+toggle?.addEventListener('click', () => {
+  setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+});
+
+// Close after picking a link, or on Escape.
+menu?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => setMenu(false));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (
+    event.key === 'Escape' &&
+    toggle?.getAttribute('aria-expanded') === 'true'
+  ) {
+    setMenu(false);
+    toggle.focus();
+  }
+});
