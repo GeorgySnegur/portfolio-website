@@ -25,6 +25,21 @@ export const strings: Record<Lang, Dict> = {
     'hero.label': '01 / INTRO',
     'hero.role': 'Web Developer',
     'hero.tagline': 'I build things that work - and automate the rest.',
+    'about.label': 'About',
+    'about.text':
+      'Student at FH Salzburg, studying Code and Interactive Systems. Background in 3D and animation - now focused on web development, automation, and DevOps. Looking for a mandatory internship (Pflichtpraktikum) starting July 2027.',
+    'projects.label': 'Work',
+    'projects.gina.text':
+      'Artist website. Migrated the site from Joomla to a custom PHP codebase and built a self-contained, bilingual (DE/EN) content management system, so the non-technical client can edit every page without touching code.',
+    'projects.gina.point1':
+      'CMS with session-based auth, CSRF protection on all forms, an XSS-safe rich-text whitelist, atomic file writes with timestamped backups, and an automated image pipeline (GD, WebP conversion and resizing).',
+    'projects.gina.point2':
+      'Full workflow end to end: Git/GitHub over SSH, FTP deployment, and a byte-verified content migration.',
+    'projects.inksync.text':
+      'AI-powered storyboard generator. Upload a script, get visual panels.',
+    'projects.tag.ai': 'AI',
+    'skills.label': 'Skills',
+    'skills.devops': 'DevOps & Automation',
   },
   de: {
     'meta.title': 'Georgy Snegur - Webentwickler',
@@ -42,6 +57,21 @@ export const strings: Record<Lang, Dict> = {
     'hero.role': 'Webentwickler',
     'hero.tagline':
       'Ich baue Dinge, die funktionieren - und automatisiere den Rest.',
+    'about.label': 'Über mich',
+    'about.text':
+      'Student an der FH Salzburg im Studiengang Code and Interactive Systems. Hintergrund in 3D und Animation - jetzt mit Fokus auf Webentwicklung, Automatisierung und DevOps. Ich suche ein Pflichtpraktikum ab Juli 2027.',
+    'projects.label': 'Projekte',
+    'projects.gina.text':
+      'Website einer Künstlerin. Die Seite von Joomla auf eine eigene PHP-Codebasis migriert und ein eigenständiges, zweisprachiges (DE/EN) Content-Management-System gebaut, damit jede Seite ohne Programmierkenntnisse bearbeitet werden kann.',
+    'projects.gina.point1':
+      'CMS mit sessionbasierter Anmeldung, CSRF-Schutz für alle Formulare, XSS-sicherer Rich-Text-Whitelist, atomaren Dateischreibvorgängen mit Backups samt Zeitstempel und automatischer Bildverarbeitung (GD, WebP-Konvertierung und Skalierung).',
+    'projects.gina.point2':
+      'Gesamter Ablauf in eigener Hand: Git/GitHub über SSH, FTP-Deployment und eine byte-genau geprüfte Migration der Inhalte.',
+    'projects.inksync.text':
+      'KI-gestützter Storyboard-Generator. Drehbuch hochladen, Bild-Panels erhalten.',
+    'projects.tag.ai': 'KI',
+    'skills.label': 'Skills',
+    'skills.devops': 'DevOps & Automatisierung',
   },
 };
 
