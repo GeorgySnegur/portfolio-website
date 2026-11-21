@@ -2,12 +2,91 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio_website</title>
+    <title>Georgy Snegur - Web Developer</title>
+    <meta
+      name="description"
+      content="Georgy Snegur, web developer and student at FH Salzburg. I build websites that work and automate the rest."
+      data-i18n-attr="content:meta.description"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="#0a0a0a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#fafafa"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <div id="app"></div>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main">
+        <a
+          class="nav-logo"
+          href="#top"
+          aria-label="Georgy Snegur, back to top"
+          data-i18n-attr="aria-label:nav.home"
+          >GS</a
+        >
+
+        <div class="nav-right">
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-attr="aria-label:nav.langGroup"
+          >
+            <button type="button" data-lang="en" lang="en" aria-pressed="true">
+              EN
+            </button>
+            <button type="button" data-lang="de" lang="de" aria-pressed="false">
+              DE
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+          >
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+            <span class="nav-toggle-text" data-i18n="nav.menu">Menu</span>
+          </button>
+        </div>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="section hero" id="top" aria-labelledby="hero-name">
+        <div class="container hero-inner">
+          <p class="section-label" data-i18n="hero.label">01 / INTRO</p>
+          <h1 class="hero-name" id="hero-name">
+            <span>Georgy</span> <span>Snegur</span>
+          </h1>
+          <div class="hero-text">
+            <p class="hero-role" data-i18n="hero.role">Web Developer</p>
+            <p class="hero-tagline" data-i18n="hero.tagline">
+              I build things that work - and automate the rest.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
