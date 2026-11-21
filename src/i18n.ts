@@ -45,6 +45,7 @@ export const strings: Record<Lang, Dict> = {
     'contact.text': 'Open to opportunities starting July 2027.',
     'contact.email': 'Email',
     'contact.cv': 'Download CV',
+    'contact.cvFile': '/georgy-snegur-cv-en.pdf',
   },
   de: {
     'meta.title': 'Georgy Snegur - Webentwickler',
@@ -82,6 +83,7 @@ export const strings: Record<Lang, Dict> = {
     'contact.text': 'Offen für Möglichkeiten ab Juli 2027.',
     'contact.email': 'E-Mail',
     'contact.cv': 'Lebenslauf herunterladen',
+    'contact.cvFile': '/georgy-snegur-cv-de.pdf',
   },
 };
 

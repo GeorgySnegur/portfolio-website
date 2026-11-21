@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { detectLang, strings } from './i18n';
@@ -62,6 +62,16 @@ describe('links', () => {
   it('external links use https', () => {
     for (const m of html.matchAll(/href="(http[^"]*)"/g)) {
       expect(m[1].startsWith('https://')).toBe(true);
+    }
+  });
+});
+
+describe('CV files', () => {
+  it('each language links a CV that exists in public/', () => {
+    for (const lang of ['en', 'de'] as const) {
+      const file = strings[lang]['contact.cvFile'];
+      const path = resolve(import.meta.dirname, '../public', file.slice(1));
+      expect(existsSync(path), path).toBe(true);
     }
   });
 });

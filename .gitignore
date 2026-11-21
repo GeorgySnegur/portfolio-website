@@ -39,3 +39,7 @@ origin-cert.txt
 *.pem
 *.key
 .env
+
+# CV originals with phone number, never publish
+public/cv_*.pdf
+public/*.zip
