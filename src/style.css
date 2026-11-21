@@ -346,50 +346,31 @@ main:focus {
 
 .hero-tagline {
   position: relative;
+  isolation: isolate;
   margin-top: 1rem;
-  max-width: 30ch;
-  padding-block: 3rem;
+  max-width: 34ch;
+  padding-bottom: 2.5rem;
   font-family: var(--font-quote);
-  font-size: 1.1875rem;
-  line-height: 1.45;
-  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
-/* Big, faded quote marks. Decorative only: the "/ ''" part hides them
-   from screen readers. English uses “ ”, German „ “.
-   The glyphs sit at different heights in their box, so each one is
-   placed so it lands inside the 3rem padding above or below the text. */
-.hero-tagline::before,
-.hero-tagline::after {
+/* One big, faint quote mark behind the text. Decorative only: the
+   "/ ''" part hides it from screen readers. */
+.hero-tagline::before {
+  content: '\201C' / '';
   position: absolute;
+  z-index: -1;
+  top: 0.5rem;
+  left: -0.5rem;
   font-family: var(--font-display);
-  font-size: 7rem;
+  font-size: 10rem;
   font-weight: 700;
   line-height: 1;
   color: var(--text);
-  opacity: 0.25;
+  opacity: 0.07;
   pointer-events: none;
-}
-
-.hero-tagline::before {
-  content: '\201C' / '';
-  top: -0.25rem;
-  left: -0.25rem;
-}
-
-.hero-tagline::after {
-  content: '\201D' / '';
-  top: calc(100% - 2.75rem);
-  right: -0.25rem;
-}
-
-:lang(de) .hero-tagline::before {
-  content: '\201E' / '';
-  top: -4.25rem;
-}
-
-:lang(de) .hero-tagline::after {
-  content: '\201C' / '';
 }
 
 @media (min-width: 768px) {
