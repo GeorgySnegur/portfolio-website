@@ -569,3 +569,88 @@ main:focus {
     gap: 2rem;
   }
 }
+
+/* ---------- Contact ---------- */
+
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.contact-text {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.contact-list {
+  margin-top: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-list a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 56px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--text);
+}
+
+.contact-list a:hover {
+  color: var(--accent-hover);
+}
+
+.contact-list svg {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+.contact-list a:hover svg {
+  color: currentColor;
+}
+
+.button-cv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 56px;
+  margin-top: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.button-cv:hover {
+  background: var(--button-hover);
+  color: var(--button-text);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}

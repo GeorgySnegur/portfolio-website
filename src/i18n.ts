@@ -40,6 +40,11 @@ export const strings: Record<Lang, Dict> = {
     'projects.tag.ai': 'AI',
     'skills.label': 'Skills',
     'skills.devops': 'DevOps & Automation',
+    'contact.label': 'Contact',
+    'contact.title': 'Get in touch',
+    'contact.text': 'Open to opportunities starting July 2027.',
+    'contact.email': 'Email',
+    'contact.cv': 'Download CV',
   },
   de: {
     'meta.title': 'Georgy Snegur - Webentwickler',
@@ -72,6 +77,11 @@ export const strings: Record<Lang, Dict> = {
     'projects.tag.ai': 'KI',
     'skills.label': 'Skills',
     'skills.devops': 'DevOps & Automatisierung',
+    'contact.label': 'Kontakt',
+    'contact.title': 'Kontakt aufnehmen',
+    'contact.text': 'Offen für Möglichkeiten ab Juli 2027.',
+    'contact.email': 'E-Mail',
+    'contact.cv': 'Lebenslauf herunterladen',
   },
 };
 
