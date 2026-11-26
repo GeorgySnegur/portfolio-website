@@ -3,10 +3,18 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { detectLang, strings } from './i18n';
 
-const html = readFileSync(
-  resolve(import.meta.dirname, '../index.html'),
-  'utf8',
-);
+const PAGES = [
+  'index.html',
+  'projects/inksync/index.html',
+  'projects/infra/index.html',
+];
+
+const pages = PAGES.map((page) => ({
+  page,
+  html: readFileSync(resolve(import.meta.dirname, '..', page), 'utf8'),
+}));
+
+const html = pages.map((p) => p.html).join('\n');
 
 function keysUsedInHtml(): string[] {
   const keys = new Set<string>();
@@ -24,7 +32,7 @@ describe('translations', () => {
     );
   });
 
-  it('every key used in index.html exists', () => {
+  it('every key used in the pages exists', () => {
     for (const key of keysUsedInHtml()) {
       expect(strings.en, key).toHaveProperty([key]);
       expect(strings.de, key).toHaveProperty([key]);
@@ -38,6 +46,24 @@ describe('translations', () => {
       ...Object.values(strings.de),
     ];
     for (const text of all) expect(text).not.toMatch(/[–—]/);
+  });
+});
+
+describe('project pages', () => {
+  it('each page has its own title key', () => {
+    for (const { page, html: pageHtml } of pages.slice(1)) {
+      const key = pageHtml.match(/data-i18n-title="([^"]+)"/)?.[1];
+      expect(key, page).toBeDefined();
+      expect(strings.en, page).toHaveProperty([key!]);
+      expect(strings.de, page).toHaveProperty([key!]);
+    }
+  });
+
+  it('main page links to each project page', () => {
+    for (const { page } of pages.slice(1)) {
+      const url = '/' + page.replace('index.html', '');
+      expect(pages[0].html).toContain(`href="${url}"`);
+    }
   });
 });
 

@@ -9,6 +9,8 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         legal: resolve(import.meta.dirname, 'legal/index.html'),
+        inksync: resolve(import.meta.dirname, 'projects/inksync/index.html'),
+        infra: resolve(import.meta.dirname, 'projects/infra/index.html'),
       },
     },
   },

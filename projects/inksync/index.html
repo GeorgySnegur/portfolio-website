@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" data-i18n-title="inksync.meta.title">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InkSync - Georgy Snegur</title>
+    <meta
+      name="description"
+      content="InkSync: a storyboard generator in plain PHP. Upload a script, get image panels generated through the Replicate API."
+      data-i18n-attr="content:inksync.meta.description"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="#0a0a0a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#fafafa"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="canonical" href="https://georgysnegur.com/projects/inksync/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main">
+        <a
+          class="nav-logo"
+          href="/"
+          aria-label="GS - Georgy Snegur, home page"
+          data-i18n-attr="aria-label:nav.homePage"
+          >GS</a
+        >
+        <div class="nav-right">
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-attr="aria-label:nav.langGroup"
+          >
+            <button type="button" data-lang="en" lang="en" aria-pressed="true">
+              EN
+            </button>
+            <button type="button" data-lang="de" lang="de" aria-pressed="false">
+              DE
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="section detail-head" aria-labelledby="page-title">
+        <div class="container">
+          <a class="back-link" href="/#projects" data-i18n="detail.back"
+            >← Back to overview</a
+          >
+          <h1 class="detail-title" id="page-title">InkSync</h1>
+          <p class="detail-lead" data-i18n="inksync.lead">
+            InkSync turns a written script into a storyboard. You upload the
+            script, the app splits it into scenes, generates an image for each
+            scene through the Replicate API and lays the images out as panels.
+            The finished storyboard can be exported.
+          </p>
+          <ul class="tags">
+            <li>PHP</li>
+            <li data-i18n="projects.tag.ai">AI</li>
+            <li>Web App</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Demo recording. Hidden until the file exists.
+           To show it: put the file at public/assets/inksync-demo.mp4,
+           remove these comment lines and keep the section below.
+           Note: Caddy caches everything under /assets/ forever, so use a new
+           file name (e.g. inksync-demo-2.mp4) when you replace the video.
+      <section class="section" aria-label="Demo">
+        <div class="container">
+          <video
+            class="detail-video"
+            src="/assets/inksync-demo.mp4"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          >
+            Demo coming soon
+          </video>
+        </div>
+      </section>
+      -->
+
+      <section class="section" aria-labelledby="how-title">
+        <div class="container">
+          <h2 class="section-title" id="how-title" data-i18n="inksync.how">
+            How it works
+          </h2>
+          <ol class="detail-steps">
+            <li data-i18n="inksync.how1">
+              Upload: the script comes in as a file. The server checks type and
+              size before anything else happens.
+            </li>
+            <li data-i18n="inksync.how2">
+              Parsing: the script is split into scenes, and each scene becomes a
+              short image prompt.
+            </li>
+            <li data-i18n="inksync.how3">
+              Image generation: each prompt goes to an image model on Replicate.
+              An image takes a few seconds, so the job runs asynchronously and
+              the app waits for the result.
+            </li>
+            <li data-i18n="inksync.how4">
+              Storage: finished images are saved on the server, served from
+              there and deleted when they are no longer needed.
+            </li>
+            <li data-i18n="inksync.how5">
+              Layout and export: the panels are put in order as a storyboard and
+              can be exported.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="stack-title">
+        <div class="container">
+          <h2 class="section-title" id="stack-title" data-i18n="detail.stack">
+            Tech stack
+          </h2>
+          <ul class="detail-list">
+            <li data-i18n="inksync.stack1">
+              PHP without a framework: routing, file uploads and validation
+              written by hand.
+            </li>
+            <li data-i18n="inksync.stack2">
+              Replicate API: hosted image models, called over HTTP with an API
+              key that stays on the server.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="learned-title">
+        <div class="container">
+          <h2
+            class="section-title"
+            id="learned-title"
+            data-i18n="detail.learned"
+          >
+            What I learned
+          </h2>
+          <ul class="detail-list">
+            <li data-i18n="inksync.learned1">
+              First time working with an external AI API (Replicate): handling
+              requests and responses, storing API keys safely, dealing with rate
+              limits.
+            </li>
+            <li data-i18n="inksync.learned2">
+              Polling vs. webhooks for asynchronous image generation: webhooks
+              scale better, polling is easier to debug.
+            </li>
+            <li data-i18n="inksync.learned3">
+              PHP without a framework: my own routing, file uploads and
+              validation. After that you know what Laravel does for you.
+            </li>
+            <li data-i18n="inksync.learned4">
+              Managing images on the server: storing generated panels, cleaning
+              them up and serving them correctly.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <a class="back-link" href="/#projects" data-i18n="detail.back"
+            >← Back to overview</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>2026</span>
+        <span>Georgy Snegur</span>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

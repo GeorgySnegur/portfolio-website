@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" data-i18n-title="infra.meta.title">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VPS Automation Stack - Georgy Snegur</title>
+    <meta
+      name="description"
+      content="The self-hosted server behind this portfolio: SSH hardening, Caddy, Cloudflare, CI/CD with GitHub Actions, Docker and separate users."
+      data-i18n-attr="content:infra.meta.description"
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="theme-color"
+      content="#0a0a0a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#fafafa"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="canonical" href="https://georgysnegur.com/projects/infra/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main">
+        <a
+          class="nav-logo"
+          href="/"
+          aria-label="GS - Georgy Snegur, home page"
+          data-i18n-attr="aria-label:nav.homePage"
+          >GS</a
+        >
+        <div class="nav-right">
+          <div
+            class="lang-switch"
+            role="group"
+            aria-label="Language"
+            data-i18n-attr="aria-label:nav.langGroup"
+          >
+            <button type="button" data-lang="en" lang="en" aria-pressed="true">
+              EN
+            </button>
+            <button type="button" data-lang="de" lang="de" aria-pressed="false">
+              DE
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="section detail-head" aria-labelledby="page-title">
+        <div class="container">
+          <a class="back-link" href="/#projects" data-i18n="detail.back"
+            >← Back to overview</a
+          >
+          <h1 class="detail-title" id="page-title">VPS Automation Stack</h1>
+          <p class="detail-lead" data-i18n="infra.lead">
+            This portfolio runs on a rented Linux VPS that I set up and maintain
+            myself, together with my automation tools. Everything on it is done
+            over SSH: access, web server, deployment, containers and user
+            rights.
+          </p>
+          <ul class="tags">
+            <li>Linux</li>
+            <li>Docker</li>
+            <li>CI/CD</li>
+            <li>Caddy</li>
+            <li>Cloudflare</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="flow-title">
+        <div class="container">
+          <h2 class="section-title" id="flow-title" data-i18n="infra.flow">
+            How a change gets online
+          </h2>
+          <pre class="detail-flow" data-i18n="infra.flowText">
+My PC
+  │  git push
+  ▼
+GitHub
+  │
+  ▼
+GitHub Actions   typecheck, format check, tests, build
+  │  only on main, only if every check passes
+  ▼
+rsync over SSH   user "deploy", one folder only
+  │
+  ▼
+VPS
+  │
+  ▼
+Caddy            serves the files over HTTPS
+  │
+  ▼
+Cloudflare       proxy in front of the server
+  │
+  ▼
+Visitor</pre>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="parts-title">
+        <div class="container">
+          <h2 class="section-title" id="parts-title" data-i18n="infra.parts">
+            The building blocks
+          </h2>
+          <div class="detail-blocks">
+            <div>
+              <h3 data-i18n="infra.ssh">SSH hardening</h3>
+              <p data-i18n="infra.sshText">
+                Login only with SSH keys, passwords are turned off. AllowUsers
+                limits who can log in at all. The deploy user is locked to
+                rrsync, so its key can copy files into one folder and nothing
+                else.
+              </p>
+            </div>
+            <div>
+              <h3 data-i18n="infra.caddy">Caddy and Cloudflare</h3>
+              <p data-i18n="infra.caddyText">
+                Caddy is the web server and reverse proxy. It uses a Cloudflare
+                Origin certificate instead of Let’s Encrypt, because with the
+                Cloudflare proxy on, the Let’s Encrypt checks have to get
+                through Cloudflare first and issuing or renewing breaks easily.
+                Visitors only ever talk to Cloudflare, and Cloudflare checks the
+                Origin certificate (SSL mode Full strict). Caddy also sets the
+                security headers, including a strict Content Security Policy.
+              </p>
+            </div>
+            <div>
+              <h3 data-i18n="infra.cicd">CI/CD</h3>
+              <p data-i18n="infra.cicdText">
+                Every push runs a GitHub Actions pipeline: typecheck, format
+                check, tests and build. Only on main and only when everything
+                passes, a second job copies the build to the server with rsync.
+                If one check fails, nothing gets deployed.
+              </p>
+            </div>
+            <div>
+              <h3 data-i18n="infra.docker">Docker</h3>
+              <p data-i18n="infra.dockerText">
+                The automation tools run in Docker containers, set up with
+                Docker Compose. Each service has its own environment and can be
+                updated or restarted without touching the rest.
+              </p>
+            </div>
+            <div>
+              <h3 data-i18n="infra.users">User isolation</h3>
+              <p data-i18n="infra.usersText">
+                Each job has its own Linux user: ops for administration, agent
+                for development work, deploy only for uploading the site, and
+                caddy for the web server. Every user has only the rights it
+                needs, so one leaked key or one broken service does not open up
+                the whole server.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="learned-title">
+        <div class="container">
+          <h2
+            class="section-title"
+            id="learned-title"
+            data-i18n="detail.learned"
+          >
+            What I learned
+          </h2>
+          <ul class="detail-list">
+            <li data-i18n="infra.learned1">
+              The Linux user and permission model in practice: why one user per
+              service makes sense (ops, agent, deploy, caddy).
+            </li>
+            <li data-i18n="infra.learned2">
+              SSH hardening: key-only auth, AllowUsers, rrsync for restricted
+              access.
+            </li>
+            <li data-i18n="infra.learned3">
+              Reverse proxy setup: Caddy with Cloudflare Origin certificates,
+              and why Let’s Encrypt behind the Cloudflare proxy does not work
+              well.
+            </li>
+            <li data-i18n="infra.learned4">
+              CI/CD from scratch: a GitHub Actions pipeline that only deploys
+              when all checks are green.
+            </li>
+            <li data-i18n="infra.learned5">
+              Debugging a server without a GUI: everything over SSH, logs and
+              systemctl.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <a class="back-link" href="/#projects" data-i18n="detail.back"
+            >← Back to overview</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>2026</span>
+        <span>Georgy Snegur</span>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

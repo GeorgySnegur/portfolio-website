@@ -90,7 +90,6 @@
     <main id="main" tabindex="-1">
       <section class="section hero" id="top" aria-labelledby="hero-name">
         <div class="container hero-inner">
-          <p class="section-label" data-i18n="hero.label">01 / INTRO</p>
           <h1 class="hero-name" id="hero-name">
             <span>Georgy</span> <span>Snegur</span>
           </h1>
@@ -106,9 +105,8 @@
 
       <section class="section" id="about" aria-labelledby="about-title">
         <div class="container">
-          <h2 class="section-label" id="about-title">
-            <span aria-hidden="true">02 / </span
-            ><span data-i18n="about.label">About</span>
+          <h2 class="section-title" id="about-title" data-i18n="about.label">
+            About
           </h2>
           <p class="about-text" data-i18n="about.text">
             Student at FH Salzburg, studying Code and Interactive Systems.
@@ -121,9 +119,12 @@
 
       <section class="section" id="projects" aria-labelledby="projects-title">
         <div class="container">
-          <h2 class="section-label" id="projects-title">
-            <span aria-hidden="true">03 / </span
-            ><span data-i18n="projects.label">Work</span>
+          <h2
+            class="section-title"
+            id="projects-title"
+            data-i18n="projects.label"
+          >
+            Projects
           </h2>
 
           <ul class="project-grid">
@@ -163,8 +164,8 @@
                   conversion and resizing).
                 </li>
                 <li data-i18n="projects.gina.point2">
-                  Full workflow end to end: Git/GitHub over SSH, FTP deployment,
-                  and a byte-verified content migration.
+                  Full workflow end to end: Git/GitHub over SSH and a
+                  byte-verified content migration.
                 </li>
               </ul>
               <ul class="tags">
@@ -178,11 +179,7 @@
             <li class="card">
               <div class="card-head">
                 <h3 class="card-title">
-                  <a
-                    class="card-link"
-                    href="https://github.com/GeorgySnegur/inksync"
-                    >InkSync</a
-                  >
+                  <a class="card-link" href="/projects/inksync/">InkSync</a>
                 </h3>
                 <svg
                   class="card-arrow"
@@ -200,13 +197,54 @@
                 </svg>
               </div>
               <p class="card-text" data-i18n="projects.inksync.text">
-                AI-powered storyboard generator. Upload a script, get visual
-                panels.
+                Storyboard generator. You upload a script, the app splits it
+                into scenes, generates an image for each scene through the
+                Replicate API and lays them out as panels you can export. Plain
+                PHP, no framework.
               </p>
               <ul class="tags">
                 <li>PHP</li>
                 <li data-i18n="projects.tag.ai">AI</li>
                 <li>Web App</li>
+              </ul>
+            </li>
+
+            <li class="card">
+              <div class="card-head">
+                <h3 class="card-title">
+                  <a class="card-link" href="/projects/infra/"
+                    >VPS Automation Stack</a
+                  >
+                </h3>
+                <svg
+                  class="card-arrow"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M7 17 17 7M8 7h9v9"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                </svg>
+              </div>
+              <p class="card-text" data-i18n="projects.infra.text">
+                The VPS that runs this portfolio and my automation tools.
+                Key-only SSH with restricted users, Caddy as reverse proxy with
+                Cloudflare Origin certificates, CI/CD with GitHub Actions
+                (typecheck, test, build, deploy over rsync), Docker Compose to
+                keep services apart, and separate users (ops, agent, deploy)
+                with only the rights each one needs.
+              </p>
+              <ul class="tags">
+                <li>Linux</li>
+                <li>Docker</li>
+                <li>CI/CD</li>
+                <li>Caddy</li>
+                <li>Cloudflare</li>
               </ul>
             </li>
           </ul>
@@ -215,9 +253,8 @@
 
       <section class="section" id="skills" aria-labelledby="skills-title">
         <div class="container">
-          <h2 class="section-label" id="skills-title">
-            <span aria-hidden="true">04 / </span
-            ><span data-i18n="skills.label">Skills</span>
+          <h2 class="section-title" id="skills-title" data-i18n="skills.label">
+            Skills
           </h2>
 
           <div class="skill-grid">
@@ -249,21 +286,21 @@
               </h3>
               <ul class="skill-list">
                 <li>Linux</li>
-                <li>Docker</li>
                 <li>CI/CD</li>
                 <li>n8n</li>
+                <li>Docker</li>
                 <li>Cloudflare</li>
               </ul>
             </div>
             <div class="skill-group">
               <h3 class="skill-title">Tools</h3>
               <ul class="skill-list">
-                <li>Git</li>
+                <li>GitHub</li>
                 <li>GitLab</li>
                 <li>VS Code</li>
+                <li>Claude Code</li>
                 <li>Blender</li>
                 <li>Figma</li>
-                <li>Claude Code</li>
               </ul>
             </div>
           </div>
@@ -271,10 +308,6 @@
       </section>
       <section class="section" id="contact" aria-labelledby="contact-title">
         <div class="container contact">
-          <p class="section-label">
-            <span aria-hidden="true">05 / </span
-            ><span data-i18n="contact.label">Contact</span>
-          </p>
           <h2
             class="contact-title"
             id="contact-title"
